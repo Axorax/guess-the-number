@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="heading">
+        <h1>Guess The Number</h1>
+        <h2>Between <span id="guess-num-start">1</span> to <span id="guess-num-end">100</span> <span>(<button id="change-range" onclick="changeRangeShow(changeRangeWrapper)">change</button><button id="change-range" class="change-range-show-mb" onclick="changeRangeShow(changeRangeWrapperMB)">change</button>)</span></h2>
+    </div>
+
+    <div id="wrapper">
+        <div id="change-range-wrapper" class="change-range-pc">
+            <input type="text" id="change-range-start" placeholder="Start Range">
+            <input type="text" id="change-range-end" placeholder="End Range">
+            <button id="change-range-btn" onclick="changeRange()">Change</button>
+        </div>
+
+        <div id="user-input">
+            <div>
+                <div id="user-input-number">
+                    <input type="text" id="input" onkeyup="checkForNumbers()">
+                    <img src="idle.svg" alt="Indicator" id="indicator">
+                </div>
+                <div id="user-input-btn">
+                    <button id="check" onclick="check()">Check</button>
+                    <button id="start" onclick="gameStart()">Start</button>
+                </div>
+            </div>
+
+            <div id="change-range-wrapper" class="change-range-mb">
+                <input type="text" id="change-range-start" placeholder="Start Range">
+                <input type="text" id="change-range-end" placeholder="End Range">
+                <button id="change-range-btn" onclick="changeRange()">Change</button>
+            </div>
+        </div>
+    
+        <div id="game-output">
+            <p>Score: <span id="score">0</span></p>
+            <p>Totalscore: <span id="totalscore">0</span></p>
+            <p>Game: <span id="msg">Not Started</span></p>
+        </div>
+    </div>
+
+    <div id="popup"><span id="popup-text"></span> <button onclick="popupClose()"><img src="close.svg" alt="Close"></button></div>
+
+</body>
+</html>
